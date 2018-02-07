@@ -1,8 +1,8 @@
 # run order
-get_data.py
-transform_data.py
-visualize_data.py
-split_data.py
-model_data.py
-predict_data.py
-set_data.py
+1. get_data.py
+2. transform_data.py
+3. visualize_data.py
+4. split_data.py
+5. model_data.py
+6. predict_data.py
+7. set_data.py
