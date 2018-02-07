@@ -1,13 +1,10 @@
 from fcsparser.api import FCSParser
 
-def set_output(ifle, model, idir='./', odir='./', verbose=False):
+def set_output(ifle, pred, idir='./', odir='./', verbose=False):
     fcs_file = FCSParser(idir + ifle)
     fcs_file = FCSParser(idir + ifle)
     
-    # TODO use predict_data to set index
-    #index 
-    index = [1, 2, 3]
-
+    index = [ pred == 'live' ] #TODO check
     subset_fcs_file = fcs_file.clone(data=fcs_file.data[index])
     subset_fcs_file.write_to_file(odir + 'subset_' + ifle)
     
@@ -20,6 +17,6 @@ def test_set_output():
     ifle  = 'Well_C03.fcs'
     idir  = '../../data/live_dead_debris/'
     odir  = './'
-    model = 'dummy'
-    set_output(ifle, model, idir, odir=odir, verbose=True)
+    pred = 'dummy'
+    set_output(ifle, pred, idir, odir=odir, verbose=True)
     
